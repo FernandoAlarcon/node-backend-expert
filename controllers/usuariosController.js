@@ -2,8 +2,8 @@ const usuariosService = require('../services/usuariosService');
 
 module.exports = {
     async login(req, res) {
-        const { username, password } = req.query;
-        const user = await usuariosService.loginUser(username, password);
+        const { email, password } = req.body; 
+        const user = await usuariosService.loginUser(email, password);
         if (user) {
             res.json(user);
         } else {

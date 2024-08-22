@@ -6,7 +6,7 @@ module.exports = {
         return await user.save();
     },
 
-    async loginUser(username, password) {
-        return await User.findOne({ username, password });
+    async loginUser(email, password) {
+        return await User.findOne({ email, password });
     }
 };

@@ -10,8 +10,8 @@ require('dotenv').config();
 const app = express();
 app.use(express.json());
 app.use(cors());
-
-mongoose.connect('mongodb://127.0.0.1:27017/pruebas_expert_group')
+ 
+mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log('Conectado a MongoDB'))
 .catch(err => console.error('Error al conectar a MongoDB', err));
 
